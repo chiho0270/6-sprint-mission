@@ -6,12 +6,14 @@ public class Message {
     UUID id;
     Long createdAt;
     Long updatedAt;
+    String content;
 
     public Message(
-            // id, createdAt, updatedAt을 제외한 필드는 생성자의 파라미터를 통해 초기화
+            String content
     ) {
         id = UUID.randomUUID();
         createdAt = System.currentTimeMillis();
+        this.content = content;
     }
 
     public UUID getId() {
@@ -24,6 +26,10 @@ public class Message {
 
     public Long getUpdatedAt() {
         return updatedAt;
+    }
+
+    public String getContent() {
+        return content;
     }
 
     public void update() {
