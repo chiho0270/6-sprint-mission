@@ -62,6 +62,23 @@ public class User {
     }
 
     public void update() {
-        updatedAt = System.currentTimeMillis();
+        this.updatedAt = System.currentTimeMillis();
+    }
+
+    public void updateProfile(String username, String password, String email, String status, String role) {
+        validateUsername(username);
+
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.status = status;
+        this.role = role;
+        this.update();
+    }
+
+    private void validateUsername(String username) {
+        if (username == null) {
+            throw new IllegalArgumentException("Username cannot be null");
+        }
     }
 }
