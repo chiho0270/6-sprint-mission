@@ -61,7 +61,7 @@ public class User {
         return role;
     }
 
-    public void update() {
+    private void update() {
         this.updatedAt = System.currentTimeMillis();
     }
 
